@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon kosmetyczny</title>
+    <link rel="stylesheet" href="styl7.css">
+</head>
+<body>
+    <section class="lewy" id="lewy1">
+        <h2>Nasza oferta</h2>
+        <ol>
+            <li><a href="twarz.html">Oczyszczanie twarzy</a>
+                <ul>
+                    <li>Peeling</li>
+                    <li>Maska</li>
+                </ul>
+            </li>
+            <li>Masaż</li>
+            <li>Makijaż</li>
+        </ol>
+        <a href="index.html">Strona główna</a>
+    </section>
+    <section class="prawy" id="prawy1">
+        <h1>Usługi kosmetyczne</h1>
+
+    </section>
+    <section class="prawy" id="prawy2">
+        <h3>Kalkulator ceny wizyty</h3>
+        <form action="" id="uslugi">
+            <input type="checkbox" name="" id="peeling" value="45"><label for="peeling">Peeling</label>
+            <br>
+            <input type="checkbox" name="" id="maska" value="30"><label for="maska">Maska</label>
+            <br>
+            <input type="checkbox" name="" id="masaz_twarzy" value="20"><label for="masaz_twarzy">Masaż twarzy</label>
+            <br>
+            <input type="checkbox" name="" id="makijaz" value="50"><label for="makijaz">Makijaż</label>
+            <br>
+            <input type="button" value="Oblicz cenę" onClick="oblicz()">
+        </form>
+        <p id="wynik" style="display: none">AVDFSDF</p>
+    </section>
+    <section class="lewy" id="lewy2">
+        <img src="obraz1.jpg" alt="Personel">
+    </section>
+    <footer>
+        <p>Autor: Anton Maksimau</p>
+    </footer>
+</body>
+<script lang="js">
+    function oblicz() {
+        let uslugi = document.getElementById('uslugi');
+        let suma = 0;
+        for (i = 0; i <= 4; i++) {
+            if (uslugi[i].checked) {
+                suma += Number(uslugi[i].value);
+            }
+        }
+
+        let wynik =  document.getElementById('wynik');
+        wynik.style.display = "block";
+        wynik.innerHTML = "Cena zabiegów: " + suma;
+    }
+</script>
+</html>
